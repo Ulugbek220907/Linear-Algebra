@@ -1,0 +1,38 @@
+{
+  "name": "linear-algebra-study-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Linear Algebra (Lay) interactive study site with visualizers, board notes, homework solutions, and an AI teacher",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run prebuild && tsc --noEmit && vite build",
+    "prebuild": "node tools/katex-lite.mjs",
+    "preview": "vite preview",
+    "verify": "tsx tools/verify.ts && tsx tools/lint-content.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "katex": "0.16.47",
+    "lucide-react": "^1.58.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^6.30.6",
+    "rehype-katex": "^7.0.1",
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/source-sans-3": "^5.3.1",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.2",
+    "vite": "^8.3.4",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

@@ -1,0 +1,377 @@
+/* Linear Algebra & Matrix Visualization Styles (.impeccable design) */
+
+/* ---------- Matrix Bracket & Grid Display ---------- */
+.matrix-wrap {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding: 0.2rem 0.4rem;
+  margin: 0.2rem 0;
+  vertical-align: middle;
+}
+
+.matrix-bracket {
+  display: inline-flex;
+  position: relative;
+  padding: 0.35rem 0.5rem;
+}
+.matrix-bracket::before,
+.matrix-bracket::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  border: 2px solid var(--ink);
+  pointer-events: none;
+}
+.matrix-bracket::before {
+  left: 0;
+  border-right: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.matrix-bracket::after {
+  right: 0;
+  border-left: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.matrix-grid {
+  display: grid;
+  gap: 0.35rem 0.65rem;
+  align-items: center;
+  justify-items: center;
+  font-family: var(--font-math, var(--font-code));
+  font-size: var(--t-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.matrix-cell {
+  min-width: 2rem;
+  height: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.3rem;
+  border-radius: var(--r-sm);
+  transition: all 0.15s var(--ease);
+  user-select: none;
+}
+
+.matrix-cell.pivot {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 0 0 1px var(--accent-line);
+}
+
+.matrix-cell.active-op {
+  background: color-mix(in oklch, var(--ok) 20%, transparent);
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.matrix-cell.target-op {
+  background: color-mix(in oklch, var(--warn) 20%, transparent);
+  color: var(--warn);
+  font-weight: 700;
+}
+
+.matrix-aug-divider {
+  border-right: 1.5px dashed var(--line-strong);
+  padding-right: 0.5rem;
+  margin-right: 0.2rem;
+}
+
+/* ---------- Interactive Lab / Widget Containers ---------- */
+.widget-card {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  background: var(--raised);
+  overflow: hidden;
+  display: grid;
+  gap: 0;
+  margin: var(--s5) 0;
+  box-shadow: 0 2px 8px color-mix(in oklch, var(--ink) 4%, transparent);
+}
+
+.widget-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--s3) var(--s5);
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.widget-card-head h3 {
+  font-size: var(--t-md);
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin: 0;
+}
+.widget-badge {
+  font-size: var(--t-xs);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 600;
+  border: 1px solid var(--accent-line);
+}
+
+.widget-body {
+  padding: var(--s5);
+  display: grid;
+  gap: var(--s4);
+}
+
+.widget-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s3);
+  padding-top: var(--s3);
+  border-top: 1px solid var(--line);
+}
+
+/* ---------- 2D Linear Transformation Explorer ---------- */
+.geom-canvas-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 420px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  overflow: hidden;
+  touch-action: none;
+}
+.geom-canvas-wrap svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.geom-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.geom-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4);
+  font-size: var(--t-sm);
+  color: var(--ink-2);
+}
+.geom-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.geom-legend-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+}
+
+/* ---------- Traffic Flow Network Graph ---------- */
+.network-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--s5);
+  align-items: start;
+}
+@media (max-width: 50rem) {
+  .network-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.network-svg-wrap {
+  position: relative;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: var(--s3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.network-svg {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+.flow-results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--t-sm);
+}
+.flow-results-table th,
+.flow-results-table td {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--line-strong);
+  text-align: left;
+}
+.flow-results-table th {
+  background: var(--panel);
+  font-weight: 600;
+}
+
+/* ---------- Board Photo Card ---------- */
+.board-card {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-lg);
+  background: var(--panel);
+  overflow: hidden;
+  margin: var(--s4) 0;
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.board-card:hover {
+  box-shadow: var(--shadow-pop);
+}
+.board-img-wrap {
+  position: relative;
+  background: #000;
+  cursor: zoom-in;
+  overflow: hidden;
+  max-height: 480px;
+}
+.board-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: opacity 0.2s;
+}
+.board-caption {
+  padding: var(--s3) var(--s4);
+  font-size: var(--t-sm);
+  color: var(--ink-2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  border-top: 1px solid var(--line);
+  background: var(--raised);
+}
+.board-badge {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--r-sm);
+  white-space: nowrap;
+}
+
+/* Board Photo Lightbox Modal */
+.board-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.88);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s4);
+  cursor: zoom-out;
+}
+.board-modal-content {
+  position: relative;
+  max-width: 96vw;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.board-modal-img {
+  max-width: 96vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--r);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+.board-modal-cap {
+  color: #fff;
+  margin-top: var(--s3);
+  font-size: var(--t-base);
+  text-align: center;
+  max-width: 48rem;
+}
+
+/* ---------- Stepper & History Log ---------- */
+.stepper-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+}
+.stepper-count {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--t-sm);
+  color: var(--ink-2);
+  min-width: 5rem;
+  text-align: center;
+}
+.step-note-box {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--r);
+  padding: var(--s3) var(--s4);
+  font-size: var(--t-sm);
+  line-height: 1.5;
+}
+
+/* ---------- Vector Space Axiom Grid ---------- */
+.axiom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--s3);
+}
+.axiom-card {
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r);
+  padding: var(--s3) var(--s4);
+  background: var(--raised);
+  display: grid;
+  gap: var(--s1);
+  transition: all 0.15s var(--ease);
+}
+.axiom-card.pass {
+  border-left: 4px solid var(--ok);
+}
+.axiom-card.fail {
+  border-left: 4px solid var(--bad);
+  background: var(--bad-soft);
+}
+.axiom-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.axiom-name {
+  font-weight: 700;
+  font-size: var(--t-sm);
+}
+.axiom-status {
+  font-size: var(--t-xs);
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.axiom-status.pass {
+  color: var(--ok);
+}
+.axiom-status.fail {
+  color: var(--bad);
+}

@@ -1,0 +1,170 @@
+/* Linear Algebra Study Site Design Tokens (.impeccable standard) */
+
+:root {
+  color-scheme: light dark;
+
+  /* Surfaces */
+  --bg: oklch(99% 0.005 240);
+  --panel: oklch(96.5% 0.01 242);
+  --raised: oklch(100% 0.002 240);
+  --sunk: oklch(97.2% 0.008 242);
+  --line: oklch(90.5% 0.015 242);
+  --line-strong: oklch(81% 0.02 242);
+
+  /* Text & Ink */
+  --ink: oklch(22% 0.035 255);
+  --ink-2: oklch(42% 0.03 255);
+  --ink-3: oklch(52% 0.028 255);
+
+  /* Primary Accent: Indigo/Cobalt (Linear Algebra Math blue) */
+  --accent: oklch(48% 0.17 260);
+  --accent-hover: oklch(42% 0.18 260);
+  --on-accent: oklch(99% 0.01 260);
+  --accent-soft: oklch(96% 0.03 260);
+  --accent-line: oklch(82% 0.07 260);
+
+  /* Linear Algebra Specific Semantics */
+  --vector-u: oklch(50% 0.18 255); /* Sapphire vector u */
+  --vector-u-soft: oklch(95.5% 0.035 255);
+  --vector-v: oklch(55% 0.19 35); /* Coral/Amber vector v */
+  --vector-v-soft: oklch(95.5% 0.04 35);
+  --vector-w: oklch(52% 0.16 150); /* Emerald vector w */
+  --vector-w-soft: oklch(95.5% 0.04 150);
+  --pivot: oklch(48% 0.15 195); /* Cyan pivot highlight */
+  --pivot-soft: oklch(95.5% 0.035 195);
+
+  /* Semantic Feedback States */
+  --ok: oklch(45% 0.14 150);
+  --ok-soft: oklch(96% 0.04 150);
+  --ok-line: oklch(80% 0.09 150);
+  --bad: oklch(48% 0.18 25);
+  --bad-soft: oklch(96% 0.035 25);
+  --bad-line: oklch(82% 0.09 25);
+  --warn: oklch(48% 0.14 75);
+  --warn-soft: oklch(96.5% 0.05 85);
+  --warn-line: oklch(82% 0.1 80);
+
+  /* Interaction & Depth */
+  --selection: oklch(88% 0.07 260);
+  --focus: oklch(56% 0.16 260);
+  --shadow-pop: 0 1px 3px oklch(25% 0.03 255 / 0.08), 0 8px 24px oklch(25% 0.03 255 / 0.12);
+  --shadow-sm: 0 1px 2px oklch(25% 0.03 255 / 0.06);
+
+  /* Typography */
+  --font: 'Source Sans 3 Variable', 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  --font-code: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --t-xs: 0.8125rem;
+  --t-sm: 0.9375rem;
+  --t-base: 1.0625rem;
+  --t-md: 1.22rem;
+  --t-lg: 1.45rem;
+  --t-xl: 1.75rem;
+  --t-2xl: 2.1rem;
+  --t-3xl: 2.6rem;
+
+  /* Spacing */
+  --s1: 0.25rem;
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4rem;
+
+  --r-sm: 6px;
+  --r: 10px;
+  --r-lg: 14px;
+
+  --measure: 40rem;
+  --wide: 56rem;
+  --topbar: 3.5rem;
+  --sidebar: 18.5rem;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: oklch(19% 0.015 255);
+    --panel: oklch(22% 0.018 255);
+    --raised: oklch(25% 0.02 255);
+    --sunk: oklch(21% 0.016 255);
+    --line: oklch(31% 0.02 255);
+    --line-strong: oklch(42% 0.025 255);
+
+    --ink: oklch(95% 0.01 245);
+    --ink-2: oklch(80% 0.018 250);
+    --ink-3: oklch(68% 0.022 250);
+
+    --accent: oklch(72% 0.14 255);
+    --accent-hover: oklch(78% 0.13 255);
+    --on-accent: oklch(18% 0.03 260);
+    --accent-soft: oklch(28% 0.04 255);
+    --accent-line: oklch(40% 0.07 255);
+
+    --vector-u: oklch(72% 0.14 255);
+    --vector-u-soft: oklch(28% 0.04 255);
+    --vector-v: oklch(74% 0.15 45);
+    --vector-v-soft: oklch(29% 0.045 45);
+    --vector-w: oklch(72% 0.13 150);
+    --vector-w-soft: oklch(28% 0.04 150);
+    --pivot: oklch(74% 0.13 195);
+    --pivot-soft: oklch(28% 0.04 195);
+
+    --ok: oklch(72% 0.13 150);
+    --ok-soft: oklch(28% 0.04 150);
+    --ok-line: oklch(40% 0.07 150);
+    --bad: oklch(70% 0.16 25);
+    --bad-soft: oklch(28% 0.05 25);
+    --bad-line: oklch(40% 0.08 25);
+    --warn: oklch(74% 0.13 80);
+    --warn-soft: oklch(28% 0.04 80);
+    --warn-line: oklch(40% 0.07 80);
+
+    --selection: oklch(35% 0.06 255);
+    --focus: oklch(68% 0.15 255);
+    --shadow-pop: 0 4px 20px rgba(0, 0, 0, 0.45);
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: oklch(19% 0.015 255);
+  --panel: oklch(22% 0.018 255);
+  --raised: oklch(25% 0.02 255);
+  --sunk: oklch(21% 0.016 255);
+  --line: oklch(31% 0.02 255);
+  --line-strong: oklch(42% 0.025 255);
+
+  --ink: oklch(95% 0.01 245);
+  --ink-2: oklch(80% 0.018 250);
+  --ink-3: oklch(68% 0.022 250);
+
+  --accent: oklch(72% 0.14 255);
+  --accent-hover: oklch(78% 0.13 255);
+  --on-accent: oklch(18% 0.03 260);
+  --accent-soft: oklch(28% 0.04 255);
+  --accent-line: oklch(40% 0.07 255);
+
+  --vector-u: oklch(72% 0.14 255);
+  --vector-u-soft: oklch(28% 0.04 255);
+  --vector-v: oklch(74% 0.15 45);
+  --vector-v-soft: oklch(29% 0.045 45);
+  --vector-w: oklch(72% 0.13 150);
+  --vector-w-soft: oklch(28% 0.04 150);
+  --pivot: oklch(74% 0.13 195);
+  --pivot-soft: oklch(28% 0.04 195);
+
+  --ok: oklch(72% 0.13 150);
+  --ok-soft: oklch(28% 0.04 150);
+  --ok-line: oklch(40% 0.07 150);
+  --bad: oklch(70% 0.16 25);
+  --bad-soft: oklch(28% 0.05 25);
+  --bad-line: oklch(40% 0.08 25);
+  --warn: oklch(74% 0.13 80);
+  --warn-soft: oklch(28% 0.04 80);
+  --warn-line: oklch(40% 0.07 80);
+
+  --selection: oklch(35% 0.06 255);
+  --focus: oklch(68% 0.15 255);
+  --shadow-pop: 0 4px 20px rgba(0, 0, 0, 0.45);
+}
