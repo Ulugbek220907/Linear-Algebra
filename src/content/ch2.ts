@@ -48,6 +48,12 @@ export const ch2: Chapter = {
           id: 'vectorSpanLab',
           title: 'Interactive Vector Span & Independence Visualizer',
         },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-04.jpg',
+          caption: 'Lecture Board: Testing independence of three vectors by row reducing [v₁ v₂ v₃ | 0]',
+          note: 'Because row reduction produces a pivot in every column, only the trivial solution exists, confirming linear independence.',
+        },
       ],
       quiz: [
         {

@@ -4,7 +4,7 @@ const r = String.raw;
 export const ch7: Chapter = {
   n: 7,
   title: 'Kernel, Range & Coordinate Isomorphisms',
-  blurb: 'Lay Sections 4.2 & 4.4: Kernel and range of linear transformations, bases for abstract vector spaces, and coordinate vector isomorphism [x]_B connecting ℙ₂ to ℝ³.',
+  blurb: 'Lay Sections 4.2 & 4.4: Kernel and range of linear transformations, bases for abstract vector spaces, coordinate vector isomorphism [x]_B connecting ℙ₂ to ℝ³, and function spaces.',
   slides: 'Lay 4.2, 4.4 · Week 7',
   lessons: [
     {
@@ -12,8 +12,8 @@ export const ch7: Chapter = {
       chapter: 7,
       title: 'Null Spaces, Column Spaces & Kernel/Range',
       summary: 'Extend Nul(A) and Col(A) to abstract linear transformations as Kernel (ker T) and Range (range T).',
-      minutes: 22,
-      slides: 'Lay §4.2 · Board Photo 21-28-17',
+      minutes: 26,
+      slides: 'Lay §4.2 · Board Photos 21-28-17 to 21-28-27',
       blocks: [
         {
           t: 'p',
@@ -33,6 +33,36 @@ export const ch7: Chapter = {
           photo: 'photo_2026-10-21_21-28-17.jpg',
           caption: 'Lecture Board: Kernel (ker T) in domain V mapped to 0_W, and Range in codomain W.',
           note: 'T is one-to-one (injective) if and only if ker(T) = {0_V}!',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-22.jpg',
+          caption: 'Lecture Board: Worked transformation T: ℝ³ → ℝ² computing Range and Kernel',
+          note: 'The professor demonstrates setting up standard matrix A and finding bases for Col A and Nul A.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-24.jpg',
+          caption: 'Lecture Board: High-dimensional mapping T: ℝ⁴ → ℝ³ with matrix representation',
+          note: 'Geometric analysis of the image subspace: plane or 3D space in codomain.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-25.jpg',
+          caption: 'Lecture Board: Computing dimensions dim(Col A) and dim(Nul A)',
+          note: 'Pivot columns give the dimension of the range; free variables give the dimension of the kernel.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-26.jpg',
+          caption: 'Lecture Board: Five-variable transformation T: ℝ⁵ → ℝ³ and Rank-Nullity verification',
+          note: 'Formal verification that dim(Nul A) + dim(Col A) = 5 (number of columns).',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-27.jpg',
+          caption: 'Lecture Board: Geometric interpretation of Kernel as lines and planes through the origin',
+          note: 'Kernel is an invariant linear subspace passing through 0 in the domain.',
         },
         {
           t: 'callout',
@@ -74,9 +104,9 @@ export const ch7: Chapter = {
       id: '4.4',
       chapter: 7,
       title: 'Coordinate Systems & The Isomorphism ℙ₂ → ℝ³',
-      summary: 'Represent abstract vectors using unique coordinate vectors [x]_B and harness the coordinate isomorphism between polynomial spaces and Euclidean space.',
-      minutes: 24,
-      slides: 'Lay §4.4 · Board Photo 21-28-21',
+      summary: 'Represent abstract vectors using unique coordinate vectors [x]_B and harness the coordinate isomorphism between polynomial/function spaces and Euclidean space.',
+      minutes: 26,
+      slides: 'Lay §4.4 · Board Photos 21-28-21 to 21-28-48',
       blocks: [
         {
           t: 'p',
@@ -95,6 +125,48 @@ export const ch7: Chapter = {
           photo: 'photo_2026-10-21_21-28-21.jpg',
           caption: 'Lecture Board: Coordinate isomorphism [p]_B connecting polynomials in ℙ₂ to vectors in ℝ³.',
           note: 'Standard basis B = {1, t, t²} maps p(t) = a₀ + a₁ t + a₂ t² to [a₀, a₁, a₂]ᵀ in ℝ³!',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-40.jpg',
+          caption: 'Lecture Board: General coordinate systems relative to non-standard basis ℬ',
+          note: 'The coordinates give the exact linear combination required to assemble vector x from basis vectors.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-41.jpg',
+          caption: 'Lecture Board: Step-by-step coordinate vector calculation by solving [b₁ ... bₙ | x]',
+          note: 'Finding coordinates reduces to solving a standard linear system with the basis vectors as columns.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-43.jpg',
+          caption: 'Lecture Board: Coordinate isomorphism in trigonometric function space span{cos x, sin x}',
+          note: 'Any linear combination c₁ cos x + c₂ sin x is uniquely represented by [c₁, c₂]ᵀ in ℝ²!',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-44.jpg',
+          caption: 'Lecture Board: Basis testing in ℙ₂ using coordinate determinants',
+          note: 'Three polynomials form a basis for ℙ₂ if and only if their 3×3 coordinate matrix has non-zero determinant.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-46.jpg',
+          caption: 'Lecture Board: Fundamental Isomorphism Theorem: Any real n-dimensional vector space V ≅ ℝⁿ',
+          note: 'Abstract calculations in polynomial or matrix spaces can be performed directly in ℝⁿ!',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-47.jpg',
+          caption: 'Lecture Board: Testing linear independence of functions via coordinate vectors',
+          note: 'Independence of coordinate vectors in ℝⁿ proves independence of the original abstract functions.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-48.jpg',
+          caption: 'Lecture Board: Change of basis transition and coordinate mapping summary',
+          note: 'Mastery of coordinate vectors bridges concrete matrix algebra with abstract vector space theory.',
         },
         {
           t: 'example',
@@ -139,13 +211,14 @@ export const ch7: Chapter = {
         },
       ],
       recap: [
-        'Coordinate vector [x]_B stores the unique weights needed to write x as a combination of basis vectors.',
-        'The coordinate mapping x ↦ [x]_B is an isomorphism: it preserves all vector space properties.',
-        'Abstract vector problems (in polynomials, matrices) can be solved by converting to Rⁿ and using standard row reduction!',
+        'Each vector in an n-dimensional space V has a UNIQUE coordinate vector [x]_B in ℝⁿ.',
+        'The coordinate mapping x ↦ [x]_B preserves addition and scalar multiplication (it is an isomorphism).',
+        'V is isomorphic to ℝⁿ: V ≅ ℝⁿ whenever dim V = n.',
+        'We can test linear independence, span, and basis in any abstract vector space by performing standard row reduction on coordinate vectors in ℝⁿ!',
       ],
       ask: [
-        'What is an isomorphism in linear algebra?',
-        'How does changing the basis change the coordinate vector?',
+        'How does coordinate isomorphism prove that dim P_n = n + 1?',
+        'Can we use coordinates for matrices in M_{2,2}?',
       ],
     },
   ],

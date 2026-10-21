@@ -11,7 +11,13 @@ export interface BoardPhotoProps {
 
 export function BoardPhoto({ photo, caption, note, badge = 'Lecture Board' }: BoardPhotoProps) {
   const [open, setOpen] = useState(false);
-  const src = photo.startsWith('http') || photo.startsWith('/') ? photo : `/board/${photo}`;
+  const base = import.meta.env.BASE_URL ?? './';
+  const cleanBase = base.endsWith('/') ? base : `${base}/`;
+  const src = photo.startsWith('http')
+    ? photo
+    : photo.startsWith('/')
+      ? `${cleanBase}${photo.slice(1)}`
+      : `${cleanBase}board/${photo}`;
 
   useEffect(() => {
     if (!open) return;

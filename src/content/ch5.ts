@@ -45,6 +45,12 @@ export const ch5: Chapter = {
           ],
           note: r`If $A$ is upper triangular, lower triangular, or diagonal, its determinant is simply the product of entries on the main diagonal!`,
         },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-20.jpg',
+          caption: 'Lecture Board: Cofactor expansion along a column with multiple zeros',
+          note: 'Choosing the column with the most zeros reduces a 4×4 determinant to simple 2×2 or 3×3 calculations.',
+        },
       ],
       quiz: [
         {
@@ -105,6 +111,18 @@ export const ch5: Chapter = {
           t: 'widget',
           id: 'determinantLab',
           title: 'Interactive Determinant & Area Lab',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-16.jpg',
+          caption: 'Lecture Board: Effect of row operations on determinants (swap negates, row addition preserves)',
+          note: 'The professor demonstrates how row replacement $R_i + c R_j \\to R_i$ leaves $\\det A$ completely unchanged.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-19.jpg',
+          caption: 'Lecture Board: Evaluating a 4×4 determinant combining row operations with cofactor expansion',
+          note: 'First create zeros in a column using row replacement, then expand along that column for rapid evaluation.',
         },
       ],
       quiz: [
@@ -178,6 +196,30 @@ export const ch5: Chapter = {
             r`A^{-1} = \frac{1}{\det A} \operatorname{adj}(A) = \frac{1}{\det A} \begin{bmatrix} C_{11} & C_{21} & \dots & C_{n1} \\ C_{12} & C_{22} & \dots & C_{n2} \\ \vdots & \vdots & \ddots & \vdots \\ C_{1n} & C_{2n} & \dots & C_{nn} \end{bmatrix}`,
           ],
           note: r`CRITICAL: The adjugate matrix $\operatorname{adj}(A)$ is the TRANSPOSE of the cofactor matrix ($C_{ji}$ in row $i$, column $j$)!`,
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-28.jpg',
+          caption: 'Lecture Board: Parametric Cramer system with parameter s and singular analysis at s = ±2',
+          note: 'Notice the board derivation: $\\det A = 3s^2 - 12 = 3(s^2 - 4)$. The system has a unique solution iff $s \\ne 2$ and $s \\ne -2$.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-29.jpg',
+          caption: 'Lecture Board: Classical adjugate formula A⁻¹ = (1/det A) adj(A)',
+          note: 'The professor highlights transposing the cofactors: $C_{ji}$ is placed at row $i$, column $j$.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-30.jpg',
+          caption: 'Lecture Board: Computing all 9 cofactors C_ij = (-1)^(i+j) det A_ij for a 3×3 matrix',
+          note: 'Step-by-step sign tracking with the checkerboard pattern: $+ - + / - + - / + - +$.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-31.jpg',
+          caption: 'Lecture Board: Geometric interpretation of determinant as area of parallelogram in ℝ² and volume in ℝ³',
+          note: 'Area is $|\\det [\\vec{u} \\ \\vec{v}]|$; a linear transformation $T(\\vec{x}) = A\\vec{x}$ scales any area by factor $|\\det A|$.',
         },
       ],
       quiz: [

@@ -107,6 +107,12 @@ export const ch3: Chapter = {
           note: 'If row reduction of [A | I] fails to produce I on the left, then A is singular (not invertible).',
         },
         {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-07.jpg',
+          caption: 'Lecture Board: Worked 3×3 matrix inversion by Gauss-Jordan elimination [A | I]',
+          note: 'Notice how each elementary row operation simultaneously transforms A into I and I into A⁻¹.',
+        },
+        {
           t: 'steps',
           title: 'Gauss-Jordan Inversion Algorithm',
           items: [

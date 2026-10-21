@@ -236,6 +236,24 @@ export const ch1: Chapter = {
           ],
           answer: r`$\vec{x} = \begin{bmatrix} -4 \\ 0 \\ -7 \end{bmatrix} + x_2 \begin{bmatrix} 2 \\ 1 \\ 0 \end{bmatrix}$. Geometrically, this describes a line in $\mathbb{R}^3$ passing through $\vec{p} = [-4, 0, -7]^T$ in the direction $\vec{d} = [2, 1, 0]^T$.`,
         },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-27-59.jpg',
+          caption: 'Lecture Board: Systematic forward elimination to find pivot columns and free variables',
+          note: 'The professor demonstrates identifying pivots step-by-step to distinguish basic from free variables.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-27-56.jpg',
+          caption: 'Lecture Board: Multi-variable general solution with two free parameters',
+          note: 'Notice the parametric vector form decomposition: $\\vec{x} = \\vec{p} + s_1 \\vec{u}_1 + s_2 \\vec{u}_2$, forming a plane in $\\mathbb{R}^4$.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-00.jpg',
+          caption: 'Lecture Board: Geometric interpretation of solution sets (lines and planes translated from origin)',
+          note: 'Non-homogeneous $A\\vec{x} = \\vec{b}$ shifts the homogeneous subspace $A\\vec{x} = \\vec{0}$ by particular vector $\\vec{p}$.',
+        },
       ],
       quiz: [
         {

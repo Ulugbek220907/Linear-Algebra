@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T00:30:00Z",
+  "title": "Design System: Linear Algebra & Its Applications",
+  "extensions": {
+    "colorMeta": {
+      "bg": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "oklch(99% 0.005 240)",
+        "dark": "oklch(19.5% 0.014 250)"
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Sidebar Mist",
+        "canonical": "oklch(96.5% 0.01 242)",
+        "dark": "oklch(22.5% 0.016 250)"
+      },
+      "raised": {
+        "role": "neutral",
+        "displayName": "Raised White",
+        "canonical": "oklch(100% 0.002 240)",
+        "dark": "oklch(25% 0.017 250)"
+      },
+      "sunk": {
+        "role": "neutral",
+        "displayName": "Sunk Wash",
+        "canonical": "oklch(97.2% 0.008 242)",
+        "dark": "oklch(21.4% 0.015 250)"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(90.5% 0.015 242)",
+        "dark": "oklch(31% 0.018 250)"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Firm Line",
+        "canonical": "oklch(81% 0.02 242)",
+        "dark": "oklch(41% 0.022 250)"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink Navy",
+        "canonical": "oklch(22% 0.035 255)",
+        "dark": "oklch(94% 0.01 240)"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Slate",
+        "canonical": "oklch(42% 0.03 255)",
+        "dark": "oklch(79% 0.016 245)"
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink Fog",
+        "canonical": "oklch(52% 0.028 255)",
+        "dark": "oklch(70% 0.02 245)"
+      },
+      "accent": {
+        "role": "accent",
+        "displayName": "Indigo Cobalt",
+        "canonical": "oklch(48% 0.17 260)",
+        "dark": "oklch(62% 0.18 260)"
+      },
+      "vector-u": {
+        "role": "semantic",
+        "displayName": "Vector U Sapphire",
+        "canonical": "oklch(50% 0.18 255)",
+        "dark": "oklch(65% 0.19 255)"
+      },
+      "vector-v": {
+        "role": "semantic",
+        "displayName": "Vector V Coral",
+        "canonical": "oklch(55% 0.19 35)",
+        "dark": "oklch(68% 0.19 35)"
+      },
+      "vector-w": {
+        "role": "semantic",
+        "displayName": "Vector W Emerald",
+        "canonical": "oklch(52% 0.16 150)",
+        "dark": "oklch(66% 0.16 150)"
+      },
+      "pivot": {
+        "role": "semantic",
+        "displayName": "Pivot Cyan",
+        "canonical": "oklch(48% 0.15 195)",
+        "dark": "oklch(64% 0.16 195)"
+      },
+      "ok": {
+        "role": "semantic",
+        "displayName": "Verified Green",
+        "canonical": "oklch(45% 0.14 150)",
+        "dark": "oklch(65% 0.15 150)"
+      },
+      "bad": {
+        "role": "semantic",
+        "displayName": "Contradiction Red",
+        "canonical": "oklch(48% 0.18 25)",
+        "dark": "oklch(65% 0.18 25)"
+      },
+      "warn": {
+        "role": "semantic",
+        "displayName": "Warning Amber",
+        "canonical": "oklch(48% 0.14 75)",
+        "dark": "oklch(68% 0.15 75)"
+      }
+    },
+    "typography": {
+      "fontFamily": "Source Sans 3 Variable, Source Sans 3, system-ui, -apple-system, sans-serif",
+      "fontFamilyMono": "ui-monospace, SF Mono, Menlo, Consolas, monospace"
+    }
+  }
+}

@@ -20,6 +20,12 @@ export const ch8: Chapter = {
           text: 'The university midterm exam tests how seamlessly you can move between five fundamental perspectives in linear algebra: **linear systems, vector equations, matrix equations, linear transformations, and subspaces**.',
         },
         {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-50.jpg',
+          caption: 'Lecture Board: The Professor’s Midterm Examination Structure',
+          note: 'Q1: Matrices & Determinants (Cofactors & Adjugate inverse). Q2: Systems (Row reduction, $A^{-1}\\vec{b}$, Cramer’s rule). Q3: Linear Transformations (Col A range, Nul A kernel, Rank-Nullity). Q4: Vector Spaces (10 Axioms proof).',
+        },
+        {
           t: 'table',
           caption: 'The Master Translation Dictionary of Linear Algebra',
           head: ['Algebraic View', 'Vector View', 'Matrix View', 'Geometric / Mapping View', 'Subspace View'],

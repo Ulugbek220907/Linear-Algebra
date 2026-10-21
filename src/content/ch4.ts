@@ -65,6 +65,18 @@ export const ch4: Chapter = {
             'To find a basis for $\\operatorname{Col} A$, identify which columns have pivots in RREF, but **ALWAYS select the corresponding columns from the ORIGINAL matrix $A$**!',
           ],
         },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-09.jpg',
+          caption: 'Lecture Board: Extracting basis for Col A from original pivot columns of A',
+          note: 'The professor marks pivot columns in REF, then reaches back to matrix A to extract the basis vectors.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-11.jpg',
+          caption: 'Lecture Board: Extracting basis for Nul A from free variable vectors in parametric form',
+          note: 'Each free variable corresponds to one independent basis vector in Nul A.',
+        },
       ],
       quiz: [
         {
@@ -131,6 +143,12 @@ export const ch4: Chapter = {
           photo: 'photo_2026-10-21_21-28-05.jpg',
           caption: 'Lecture Board: Rank-Nullity Theorem statement, proofs, and 4x6 matrix rank dimension analysis.',
           note: 'Notice the fundamental identity: rank(A) + dim(Nul A) = number of columns = n.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-14.jpg',
+          caption: 'Lecture Board: Dimensions of subspaces and verifying rank(A) + nullity(A) = n',
+          note: 'Notice the dimension count across rows vs columns and the partition of domain ℝⁿ.',
         },
         {
           t: 'callout',

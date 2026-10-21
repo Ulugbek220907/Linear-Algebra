@@ -4,7 +4,7 @@ const r = String.raw;
 export const ch6: Chapter = {
   n: 6,
   title: 'Abstract Vector Spaces & The 10 Axioms',
-  blurb: 'Lay Section 4.1: General vector spaces over ℝ, the 10 formal axioms, verification proofs, and the professor’s exact board counterexamples of non-standard operations.',
+  blurb: 'Lay Section 4.1: General vector spaces over ℝ, the 10 formal axioms, verification proofs, the multiplicative space (0, ∞), and the professor’s exact board counterexamples.',
   slides: 'Lay 4.1 · Week 6',
   lessons: [
     {
@@ -12,8 +12,8 @@ export const ch6: Chapter = {
       chapter: 6,
       title: 'Vector Spaces: The 10 Axioms & Board Counterexamples',
       summary: 'Define general vector spaces over ℝ, verify the 10 axioms, and study the exact board counterexamples where distributive laws fail.',
-      minutes: 26,
-      slides: 'Lay §4.1 · Board Photos 21-28-13 to 21-28-16',
+      minutes: 28,
+      slides: 'Lay §4.1 · Board Photos 21-28-13 to 21-28-55',
       blocks: [
         {
           t: 'p',
@@ -52,57 +52,82 @@ export const ch6: Chapter = {
           ],
         },
         {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-35.jpg',
+          caption: 'Lecture Board: Formal uniqueness proofs for the zero vector and additive inverse',
+          note: 'The professor proves that if e and e\' both satisfy the zero axiom, then e = e + e\' = e\'.',
+        },
+        {
           t: 'h2',
-          text: 'The Professor’s Board Counterexample',
+          text: 'The Multiplicative Vector Space V = (0, ∞)',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-33.jpg',
+          caption: 'Lecture Board: Vector space structure on positive reals V = (0, ∞) under x ⊕ y = xy',
+          note: 'Notice the zero element: e = 1 because x · 1 = x. The additive inverse of x is 1/x because x · (1/x) = 1.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-34.jpg',
+          caption: 'Lecture Board: Scalar multiplication c ⊙ x = x^c verification',
+          note: 'Exponents turn addition of scalars into multiplication of vectors: x^(c+d) = x^c · x^d!',
+        },
+        {
+          t: 'h2',
+          text: 'Counterexamples & Subspace Criteria',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-36.jpg',
+          caption: 'Lecture Board: Classic counterexamples failing vector space closure or zero element',
+          note: 'Testing sets where negative scalars eject vectors from the domain (e.g. upper half-plane).',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-37.jpg',
+          caption: 'Lecture Board: The 3 fundamental criteria for a subspace H ≤ V',
+          note: '1. Zero vector in H; 2. Closed under addition; 3. Closed under scalar multiplication.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-38.jpg',
+          caption: 'Lecture Board: Subspaces in polynomial spaces ℙₙ and real function spaces C[a, b]',
+          note: 'The set of polynomials with p(0) = 0 is a subspace; polynomials with p(0) = 1 is NOT.',
+        },
+        {
+          t: 'h2',
+          text: 'The Professor’s Advanced Midterm Counterexample',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-51.jpg',
+          caption: 'Lecture Board: Definition of non-standard operations on ℝ²',
+          note: 'Addition u ⊕ v = [x₁+x₂-1, y₁+y₂]ᵀ with scalar multiplication c ⊙ u = [cx-c+1, c²y]ᵀ.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-52.jpg',
+          caption: 'Lecture Board: Finding zero vector e = [1, 0]ᵀ and additive inverse [-u] = [2-x, -y]ᵀ',
+          note: 'The identity element works on both coordinates: x + 1 - 1 = x and y + 0 = y.',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-54.jpg',
+          caption: 'Lecture Board: Testing Axiom 7: c ⊙ (u ⊕ v) = c ⊙ u ⊕ c ⊙ v',
+          note: 'Axiom 7 surprisingly holds because the constant terms match on both sides!',
+        },
+        {
+          t: 'board',
+          photo: 'photo_2026-10-21_21-28-55.jpg',
+          caption: 'Lecture Board: Proving failure of Axiom 8: (k+l) ⊙ u ≠ k ⊙ u ⊕ l ⊙ u',
+          note: 'The second coordinate gives (k+l)²y on LHS vs (k²+l²)y on RHS. The missing 2kly cross-term breaks distributivity!',
         },
         {
           t: 'board',
           photo: 'photo_2026-10-21_21-28-15.jpg',
-          caption: 'Lecture Board: Full proof showing that V = ℝ² with u ⊕ v = [u₁ + v₁ - 1, u₂ + v₂]ᵀ FAILS Axioms 7 & 8.',
-          note: 'The zero vector is [1, 0]ᵀ and the inverse is [2 - u₁, -u₂]ᵀ, but scalar multiplication does not distribute!',
-        },
-        {
-          t: 'example',
-          title: 'Board Counterexample Proof',
-          source: 'Board Photos 21-28-15 & 21-28-16',
-          problem: r`Let $V = \mathbb{R}^2$ with standard scalar multiplication $c\vec{u} = [c u_1, c u_2]^T$, but non-standard addition $\vec{u} \oplus \vec{v} = \begin{bmatrix} u_1 + v_1 - 1 \\ u_2 + v_2 \end{bmatrix}$. Prove whether $V$ is a vector space.`,
-          boardPhoto: 'photo_2026-10-21_21-28-15.jpg',
-          steps: [
-            {
-              say: r`Find the zero vector $\vec{e} = [e_1, e_2]^T$ satisfying $\vec{u} \oplus \vec{e} = \vec{u}$:`,
-              math: [
-                r`\begin{bmatrix} u_1 + e_1 - 1 \\ u_2 + e_2 \end{bmatrix} = \begin{bmatrix} u_1 \\ u_2 \end{bmatrix}`,
-                r`u_1 + e_1 - 1 = u_1 \implies e_1 = 1, \quad u_2 + e_2 = u_2 \implies e_2 = 0`,
-                r`\text{Thus the zero element is } \vec{0}_V = \begin{bmatrix} 1 \\ 0 \end{bmatrix}`,
-              ],
-            },
-            {
-              say: r`Find the additive inverse $-\vec{u} = [w_1, w_2]^T$ satisfying $\vec{u} \oplus (-\vec{u}) = \vec{0}_V = [1, 0]^T$:`,
-              math: [
-                r`u_1 + w_1 - 1 = 1 \implies w_1 = 2 - u_1, \quad u_2 + w_2 = 0 \implies w_2 = -u_2`,
-                r`\text{Thus } -\vec{u} = \begin{bmatrix} 2 - u_1 \\ -u_2 \end{bmatrix}`,
-              ],
-            },
-            {
-              say: r`Now test Axiom 7: Does $c(\vec{u} \oplus \vec{v}) = c\vec{u} \oplus c\vec{v}$ hold? Calculate left-hand side:`,
-              math: [
-                r`\vec{u} \oplus \vec{v} = \begin{bmatrix} u_1 + v_1 - 1 \\ u_2 + v_2 \end{bmatrix}`,
-                r`\text{LHS } = c(\vec{u} \oplus \vec{v}) = \begin{bmatrix} c(u_1 + v_1 - 1) \\ c(u_2 + v_2) \end{bmatrix} = \begin{bmatrix} cu_1 + cv_1 - c \\ cu_2 + cv_2 \end{bmatrix}`,
-              ],
-            },
-            {
-              say: r`Calculate right-hand side using the custom addition rule $\oplus$:`,
-              math: [
-                r`c\vec{u} = \begin{bmatrix} cu_1 \\ cu_2 \end{bmatrix}, \quad c\vec{v} = \begin{bmatrix} cv_1 \\ cv_2 \end{bmatrix}`,
-                r`\text{RHS } = c\vec{u} \oplus c\vec{v} = \begin{bmatrix} cu_1 + cv_1 - 1 \\ cu_2 + cv_2 \end{bmatrix}`,
-              ],
-            },
-            {
-              say: r`Compare the first components: LHS has $-c$, whereas RHS has $-1$. For any scalar $c \ne 1$ (for instance, $c = 2$), LHS $\ne$ RHS!`,
-              math: r`cu_1 + cv_1 - c \ne cu_1 + cv_1 - 1 \quad (\text{when } c \ne 1)`,
-            },
-          ],
-          answer: r`Axiom 7 fails! Therefore, $V$ is NOT a vector space over $\mathbb{R}$.`,
+          caption: 'Lecture Board: Summary proof that non-standard operational sets fail to form vector spaces',
+          note: 'A set is a vector space if and only if EVERY ONE of the 10 axioms passes.',
         },
         {
           t: 'widget',
@@ -124,16 +149,24 @@ export const ch6: Chapter = {
           answer: 1,
           why: 'By definition, a vector space must satisfy every single one of the 10 axioms. Even a single violation disqualifies the set.',
         },
+        {
+          id: 'q4.1.2',
+          type: 'mc',
+          q: 'In the multiplicative vector space $V = (0, \\infty)$ where $\\vec{u} \\oplus \\vec{v} = uv$, what is the zero vector $\\vec{0}_V$?',
+          options: ['0', '1', '-1', 'e (Euler’s constant)'],
+          answer: 1,
+          why: 'The zero vector must satisfy u ⊕ e = u. Here u · e = u implies e = 1.',
+        },
       ],
       recap: [
         'A vector space requires ALL 10 axioms to hold.',
         'Axioms 1-5 govern vector addition; Axioms 6-10 govern scalar multiplication.',
-        'In non-standard operations, the zero vector and inverse may not look like standard zeros (e.g. e = [1, 0]ᵀ).',
+        'In non-standard operations, the zero vector and inverse may not look like standard zeros (e.g. e = [1, 0]ᵀ or e = 1 in (0, ∞)).',
         'Distributive axioms c(u ⊕ v) = cu ⊕ cv and (c+d)u = cu ⊕ du are the most common to fail under shifted operations.',
       ],
       ask: [
         'Can the zero vector of a vector space ever be something other than [0, 0, ..., 0]?',
-        'How do we test if the set of all polynomials P_n is a vector space?',
+        'How does the vector space (0, ∞) connect to logarithms?',
       ],
     },
   ],
