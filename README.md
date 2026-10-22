@@ -96,7 +96,7 @@ npm run start
 ```
 .
 ├── render.yaml          # Render Blueprint deployment specification
-├── .node-version        # Node runtime pin for deployment platforms (v20.18.0)
+├── .node-version        # Node runtime pin for deployment platforms (v22.14.0)
 ├── .nvmrc               # NVM configuration
 ├── src/
 │   ├── App.tsx          # Root router & layout
