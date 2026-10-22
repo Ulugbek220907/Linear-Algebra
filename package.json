@@ -6,7 +6,7 @@
   "description": "Linear Algebra (Lay) interactive study site with visualizers, board notes, homework solutions, and an AI teacher",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node tools/katex-lite.mjs",
+    "prebuild": "node tools/ensure-native.mjs && node tools/katex-lite.mjs",
     "build": "tsc --noEmit && vite build",
     "start": "node tools/serve.mjs",
     "preview": "vite preview",
