@@ -34,7 +34,24 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  const parsedUrl = new URL(req.url || '/', `http://${req.headers.host || 'localhost'}`);
+  const rawUrl = req.url || '/';
+  let decodedRaw = '';
+  try {
+    decodedRaw = decodeURIComponent(rawUrl);
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'text/plain' });
+    res.end('Bad Request');
+    return;
+  }
+
+  // Guard against directory traversal in raw request
+  if (rawUrl.includes('..') || rawUrl.includes('\\') || decodedRaw.includes('..') || decodedRaw.includes('\\')) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('403 Forbidden: Path traversal prohibited');
+    return;
+  }
+
+  const parsedUrl = new URL(rawUrl, `http://${req.headers.host || 'localhost'}`);
   let pathname = decodeURIComponent(parsedUrl.pathname);
 
   if (pathname === '/' || pathname === '') {
@@ -55,6 +72,13 @@ const server = http.createServer((req, res) => {
     let isFallback = false;
 
     if (err || !stats.isFile()) {
+      const ext = path.extname(pathname).toLowerCase();
+      // If the request targeted a specific static asset with an extension (other than .html), do not fallback to index.html
+      if (ext && ext !== '.html') {
+        res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+        res.end(`404 Not Found: Asset ${pathname} not found.`);
+        return;
+      }
       // Fallback to index.html for SPA client-side routing
       filePath = path.join(distDir, 'index.html');
       isFallback = true;

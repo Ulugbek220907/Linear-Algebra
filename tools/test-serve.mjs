@@ -16,11 +16,21 @@ child.stderr.on('data', (d) => process.stderr.write(`[server stderr] ${d}`));
 
 function request(pathStr) {
   return new Promise((resolve, reject) => {
-    http.get(`http://127.0.0.1:${testPort}${pathStr}`, (res) => {
-      let data = '';
-      res.on('data', (c) => (data += c));
-      res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: data }));
-    }).on('error', reject);
+    const req = http.request(
+      {
+        host: '127.0.0.1',
+        port: testPort,
+        path: pathStr,
+        method: 'GET',
+      },
+      (res) => {
+        let data = '';
+        res.on('data', (c) => (data += c));
+        res.on('end', () => resolve({ status: res.statusCode, headers: res.headers, body: data }));
+      }
+    );
+    req.on('error', reject);
+    req.end();
   });
 }
 
@@ -49,6 +59,27 @@ async function run() {
       throw new Error(`Asset test failed: status=${imgRes.status}, type=${imgRes.headers['content-type']}`);
     }
     console.log('✓ Asset /board/photo_2026-10-21_21-27-46.jpg returns 200 image/jpeg');
+
+    // 4. Missing static asset returns 404 (does NOT falsely fallback to index.html)
+    const missingAssetRes = await request('/board/nonexistent-file.jpg');
+    if (missingAssetRes.status !== 404) {
+      throw new Error(`Missing asset test failed: expected 404, got status=${missingAssetRes.status}`);
+    }
+    console.log('✓ Missing asset /board/nonexistent-file.jpg returns 404');
+
+    // 5. Nested SPA Route Fallback
+    const nestedSpaRes = await request('/chapter/2');
+    if (nestedSpaRes.status !== 200 || !nestedSpaRes.body.includes('<!doctype html>')) {
+      throw new Error(`Nested SPA route failed: status=${nestedSpaRes.status}`);
+    }
+    console.log('✓ Nested SPA route /chapter/2 returns 200 fallback to index.html');
+
+    // 6. Path Traversal Guard returns 403
+    const traversalRes = await request('/%2e%2e/package.json');
+    if (traversalRes.status !== 403) {
+      throw new Error(`Path traversal guard failed: expected 403, got status=${traversalRes.status}`);
+    }
+    console.log('✓ Path traversal guard returns 403 Forbidden');
 
     console.log('ALL SERVE TESTS PASSED!');
   } finally {

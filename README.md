@@ -108,6 +108,7 @@ npm run start
 │   ├── styles/          # Impeccable CSS tokens, typography, math & component themes
 │   └── widgets/         # Interactive visualizers (MatrixExplorer, RrefStepper, etc.)
 ├── tools/
+│   ├── check-linux-case.mjs # Linux filesystem case-sensitivity verifier
 │   ├── katex-lite.mjs   # Optimized KaTeX CSS builder
 │   ├── lint-content.ts  # Verification for LaTeX expressions and lessons
 │   ├── serve.mjs        # Production static server for Render Web Service
