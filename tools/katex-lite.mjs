@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const root = path.resolve(import.meta.dirname, '..');
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, '..');
 let css = fs.readFileSync(path.join(root, 'node_modules/katex/dist/katex.min.css'), 'utf8');
 
 // keep only woff2 sources

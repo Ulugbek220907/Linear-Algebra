@@ -8,9 +8,13 @@
     "dev": "vite",
     "build": "npm run prebuild && tsc --noEmit && vite build",
     "prebuild": "node tools/katex-lite.mjs",
+    "start": "node tools/serve.mjs",
     "preview": "vite preview",
-    "verify": "tsx tools/verify.ts && tsx tools/lint-content.ts",
+    "verify": "tsx tools/verify.ts && tsx tools/lint-content.ts && node tools/test-serve.mjs",
     "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "dependencies": {
     "katex": "0.16.47",
